@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.rottentomatoes.api</groupId>
+    <artifactId>rottentomatoes-java-api</artifactId>
+    <version>0.1.SNAPSHOT</version>
+
+    <name>RottenTomatoes-Java-API</name>
+    <description>API for the RottenTomatoes.com website</description>
+    <url>https://github.com/ssouris/rottentomatoes-java-api</url>
+    <inceptionYear>2015</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>Stathis Souris</name>
+            <email>stathis.souris@gmail.com</email>
+            <id>stathis.souris</id>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>scm:git:git@github.com:ssouris/rottentomatoes-java-api.git</url>
+        <connection>scm:git:git@github.com:ssouris/rottentomatoes-java-api.git</connection>
+        <developerConnection>scm:git:git@github.com:ssouris/rottentomatoes-java-api.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>github-project-site</id>
+            <name>GitHub Project Pages</name>
+            <url>gitsite:git@github.com/ssouris/rottentomatoes-java-api.git</url>
+        </site>
+    </distributionManagement>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/ssouris/rottentomatoes-java-api/issues</url>
+    </issueManagement>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <retrofit.version>1.9.0</retrofit.version>
+        <okhttp.version>2.2.0</okhttp.version>
+        <junit.version>4.12</junit.version>
+        <assertj.core.version>1.7.0</assertj.core.version>
+        <version.slf4j>1.7.12</version.slf4j>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.squareup.retrofit</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--LOGGING-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>${version.slf4j}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
