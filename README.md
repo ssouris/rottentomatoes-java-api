@@ -5,7 +5,7 @@ Java API for Rotten Tomatoes website
 // Create an instance of the service you wish to use
 // you can keep this around
 RottenTomatoes rt = new RottenTomatoes();
-rt.setApiKey(TestConstants.API_KEY);
+rt.setApiKey(API_KEY);
 MoviesListsService moviesService = rt.dvdListsService();
 //
 // Call any of the available endpoints
