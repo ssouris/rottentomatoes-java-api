@@ -15,7 +15,7 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.movies;
 
 import com.yetanotherdevblog.rottentomatoes.api.entities.*;
 import com.yetanotherdevblog.rottentomatoes.api.enumerations.AliasType;
@@ -42,28 +42,18 @@ public interface MovieDetailedInfoService {
     /**
      * Pulls the complete movie cast for a movie
      *
-     * @param id
+     * @param id the rottent tomatoes movie id
      * @return
      */
     @GET("/movies/{id}/cast.json")
-    RTCasts castInfo(
-            @Path("id") Integer id
-    );
-
-    /**
-     *
-     * @param id
-     * @return
-     */
-    @GET("/movies/{id}/clips.json")
-    RTClips clips(
+    RTCasts cast(
             @Path("id") Integer id
     );
 
     /**
      * Retrieves the reviews for a movie. Results are paginated if they go past the specified page limit
      *
-     * @param id
+     * @param id the rottent tomatoes movie id
      * @param review_type (required=false, default='top_critic')
      * @param page_limit (required=false, default=20) The number of reviews to show per page
      * @param page	(required=false, default=1)	The selected page of reviews
@@ -84,7 +74,7 @@ public interface MovieDetailedInfoService {
     /**
      * Shows similar movies for a movie. The example below shows a movie similar to Toy Story 3
      *
-     * @param id
+     * @param id the rottent tomatoes movie id
      * @param limit	(required=false, default:5) Limit the number of similar movies to show
      * @return
      */
@@ -107,5 +97,15 @@ public interface MovieDetailedInfoService {
     RTMovie movieAlias(
             @Query("type") AliasType type,
             @Query("id") Integer id);
+
+    /**
+     *
+     * @param id the rottent tomatoes movie id
+     * @return
+     */
+    @GET("/movies/{id}/clips.json")
+    RTClips clips(
+            @Path("id") Integer id
+    );
 
 }

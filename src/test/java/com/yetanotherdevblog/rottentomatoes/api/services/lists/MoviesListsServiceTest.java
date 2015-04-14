@@ -15,11 +15,12 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
 import com.yetanotherdevblog.rottentomatoes.api.RottenTomatoes;
 import com.yetanotherdevblog.rottentomatoes.api.TestConstants;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;
+import com.yetanotherdevblog.rottentomatoes.api.services.lists.MoviesListsService;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,14 +54,14 @@ public class MoviesListsServiceTest {
 
     @Test
     public void openingMovies() {
-        RTMoviesPage openingMovies = moviesService.openingMovies(TestConstants.PAGE_LIMIT, TestConstants.DEFAULT_COUNTRY);
+        RTMoviesPage openingMovies = moviesService.opening(TestConstants.PAGE_LIMIT, TestConstants.DEFAULT_COUNTRY);
         Assertions.assertThat(openingMovies.movies).isNotNull();
         Assertions.assertThat(openingMovies.movies.size()).isEqualTo(TestConstants.PAGE_LIMIT);
     }
 
     @Test
     public void upcomingMovies() {
-        RTMoviesPage upcomingMovies = moviesService.upcomingMovies(TestConstants.PAGE_LIMIT, TestConstants.PAGE, TestConstants.DEFAULT_COUNTRY);
+        RTMoviesPage upcomingMovies = moviesService.upcoming(TestConstants.PAGE_LIMIT, TestConstants.PAGE, TestConstants.DEFAULT_COUNTRY);
         Assertions.assertThat(upcomingMovies.movies).isNotNull();
         Assertions.assertThat(upcomingMovies.movies.size()).isEqualTo(TestConstants.PAGE_LIMIT);
     }

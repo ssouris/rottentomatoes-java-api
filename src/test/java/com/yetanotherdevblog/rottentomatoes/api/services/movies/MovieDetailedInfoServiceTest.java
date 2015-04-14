@@ -15,13 +15,14 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.movies;
 
 import com.yetanotherdevblog.rottentomatoes.api.RottenTomatoes;
 import com.yetanotherdevblog.rottentomatoes.api.TestConstants;
 import com.yetanotherdevblog.rottentomatoes.api.entities.*;
 import com.yetanotherdevblog.rottentomatoes.api.enumerations.AliasType;
 import com.yetanotherdevblog.rottentomatoes.api.enumerations.ReviewType;
+import com.yetanotherdevblog.rottentomatoes.api.services.movies.MovieDetailedInfoService;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +48,7 @@ public class MovieDetailedInfoServiceTest {
 
     @Test
     public void castInfo() {
-        RTCasts moviesInfo = movieDetailedInfoService.castInfo(TestConstants.TOY_STORY3_RT_ID);
+        RTCasts moviesInfo = movieDetailedInfoService.cast(TestConstants.TOY_STORY3_RT_ID);
         assertThat(moviesInfo.cast.get(0).id).isEqualTo("162655641");
         assertThat(moviesInfo.cast.get(0).name).isEqualTo("Tom Hanks");
         assertThat(moviesInfo.cast.get(0).characters.get(0)).isEqualTo("Woody");

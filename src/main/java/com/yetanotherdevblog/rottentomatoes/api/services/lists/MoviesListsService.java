@@ -15,8 +15,9 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
+import com.yetanotherdevblog.rottentomatoes.api.entities.RTMovies;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;
 import retrofit.http.GET;
 import retrofit.http.Query;
@@ -39,6 +40,7 @@ public interface MoviesListsService {
     );
 
     /**
+     * Retrieves movies currently in theaters
      *
      * @param page_limit (default: 30, required=false)	The amount of movie search results to show per page
      * @param page	(default: 1, required=false) The selected page of movie search results
@@ -54,19 +56,30 @@ public interface MoviesListsService {
     );
 
     /**
+     * Retrieves current opening movies
      *
-     * @param limit
-     * @param country
+     * @param limit (required=false, default=16) Limits the number of opening movies returned
+     * @param country (required=false, default='us') Provides localized data for the selected country
+     *                (ISO 3166-1 alpha-2) if available. Otherwise, returns US data.
      * @return
      */
     @GET("/lists/movies/opening.json")
-    RTMoviesPage openingMovies(
+    RTMovies opening(
             @Query("limit") Integer limit,
             @Query("country") String country
     );
 
+    /**
+     * Retrieves upcoming movies. Results are paginated if they go past the specified page limit
+     *
+     * @param page_limit (required=false, default=16) The amount of upcoming movies to show per page
+     * @param page (required=false, default=1) The selected page of upcoming movies
+     * @param country (required=false, default='us') Provides localized data for the selected country
+     *                (ISO 3166-1 alpha-2) if available. Otherwise, returns US data.
+     * @return
+     */
     @GET("/lists/movies/upcoming.json")
-    RTMoviesPage upcomingMovies(
+    RTMoviesPage upcoming(
             @Query("page_limit") Integer page_limit,
             @Query("page") Integer page,
             @Query("country") String country

@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.util.Properties;
 
-public class TestLogger {
+public class TestPropertiesFile {
 
-     private static final Logger LOGGER = LoggerFactory.getLogger(TestLogger.class);
+     private static final Logger LOGGER = LoggerFactory.getLogger(TestPropertiesFile.class);
 
     /**
      * Load properties from a file

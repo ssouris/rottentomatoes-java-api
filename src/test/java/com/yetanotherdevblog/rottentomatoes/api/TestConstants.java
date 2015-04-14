@@ -27,30 +27,17 @@ import static org.junit.Assert.fail;
 
 public final class TestConstants {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(TestConstants.class);
-
-    private static Properties props = new Properties();
-    private final static String PROP_FIlENAME = "testing.properties";
-
-    static {
-        if (props.isEmpty()) {
-            File f = new File(PROP_FIlENAME);
-            if (f.exists()) {
-                LOGGER.info("Loading properties from '{}'", PROP_FIlENAME);
-                TestLogger.loadProperties(props, f);
-            } else {
-                LOGGER.info("Property file '{}' not found, creating dummy file.", PROP_FIlENAME);
-
-                props.setProperty("api.key", "INSERT_YOUR_KEY_HERE");
-
-                TestLogger.saveProperties(props, f, "Properties file for tests");
-                fail("Failed to get key information from properties file '" + PROP_FIlENAME + "'");
-            }
-        }
-    }
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestConstants.class);
 
     // Non-instantiable class
     private  TestConstants() { }
+
+    /**
+     * Property filename.
+     */
+    private final static String PROP_FIlENAME = "testing.properties";
+
+    private static Properties props = new Properties();
 
     public final static String DEFAULT_COUNTRY = "us";
     public final static Integer PAGE_LIMIT = 1;
@@ -66,5 +53,32 @@ public final class TestConstants {
      * Define api.key property in testing.properties
      */
     public static final String API_KEY = props.getProperty("api.key");
+
+
+    static {
+        loadFromOrCreatePropertiesFile();
+    }
+
+    /**
+     * Will try to load properties file but if it fails will
+     * create a properties file for the tester to fill the api.key
+     */
+    private static void loadFromOrCreatePropertiesFile() {
+        if (props.isEmpty()) {
+            File f = new File(PROP_FIlENAME);
+            if (f.exists()) {
+                LOGGER.info("Loading properties from '{}'", PROP_FIlENAME);
+                TestPropertiesFile.loadProperties(props, f);
+            } else {
+                LOGGER.info("Property file '{}' not found, creating dummy file.", PROP_FIlENAME);
+
+                props.setProperty("api.key", "INSERT_YOUR_KEY_HERE");
+
+                TestPropertiesFile.saveProperties(props, f, "Properties file for tests");
+                fail("Failed to get key information from properties file '" + PROP_FIlENAME + "'");
+            }
+        }
+    }
+
 }
 
