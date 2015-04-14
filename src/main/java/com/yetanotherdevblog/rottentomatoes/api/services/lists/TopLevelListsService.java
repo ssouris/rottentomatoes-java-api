@@ -15,19 +15,35 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
 import com.yetanotherdevblog.rottentomatoes.api.entities.LinksWrapper;
 import retrofit.http.GET;
 
 public interface TopLevelListsService {
 
+    /**
+     * Displays the top level lists available in the API.
+     * We currently have movie lists and dvd lists available
+     *
+     * @return
+     */
     @GET("/lists.json")
     LinksWrapper listsDirectory();
 
+    /**
+     * Shows the movie lists we have available
+     *
+     * @return
+     */
     @GET("/lists/movies.json")
     LinksWrapper movieListsDirectory();
 
+    /**
+     * Shows the DVD lists we have available
+     *
+     * @return
+     */
     @GET("/lists/dvds.json")
     LinksWrapper dvdListsDirectory();
 

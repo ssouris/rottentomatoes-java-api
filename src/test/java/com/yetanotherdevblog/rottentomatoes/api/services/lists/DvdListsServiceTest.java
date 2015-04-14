@@ -15,12 +15,13 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
 import com.yetanotherdevblog.rottentomatoes.api.RottenTomatoes;
 import com.yetanotherdevblog.rottentomatoes.api.TestConstants;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMovies;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;
+import com.yetanotherdevblog.rottentomatoes.api.services.lists.DvdListsService;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;

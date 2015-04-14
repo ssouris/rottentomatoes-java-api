@@ -15,7 +15,7 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMovies;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;

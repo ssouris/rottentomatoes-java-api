@@ -15,7 +15,7 @@
  *
  */
 
-package com.yetanotherdevblog.rottentomatoes.api.services;
+package com.yetanotherdevblog.rottentomatoes.api.services.movies;
 
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;
 import retrofit.http.GET;

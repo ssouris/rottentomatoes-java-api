@@ -18,7 +18,11 @@
 package com.yetanotherdevblog.rottentomatoes.api;
 
 import com.squareup.okhttp.OkHttpClient;
-import com.yetanotherdevblog.rottentomatoes.api.services.*;
+import com.yetanotherdevblog.rottentomatoes.api.services.lists.DvdListsService;
+import com.yetanotherdevblog.rottentomatoes.api.services.lists.MoviesListsService;
+import com.yetanotherdevblog.rottentomatoes.api.services.lists.TopLevelListsService;
+import com.yetanotherdevblog.rottentomatoes.api.services.movies.MovieDetailedInfoService;
+import com.yetanotherdevblog.rottentomatoes.api.services.movies.SearchService;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
