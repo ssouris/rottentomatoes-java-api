@@ -19,6 +19,7 @@ package com.yetanotherdevblog.rottentomatoes.api.services.lists;
 
 import com.yetanotherdevblog.rottentomatoes.api.RottenTomatoes;
 import com.yetanotherdevblog.rottentomatoes.api.TestConstants;
+import com.yetanotherdevblog.rottentomatoes.api.entities.RTMovies;
 import com.yetanotherdevblog.rottentomatoes.api.entities.RTMoviesPage;
 import com.yetanotherdevblog.rottentomatoes.api.services.lists.MoviesListsService;
 import org.assertj.core.api.Assertions;
@@ -54,7 +55,7 @@ public class MoviesListsServiceTest {
 
     @Test
     public void openingMovies() {
-        RTMoviesPage openingMovies = moviesService.opening(TestConstants.PAGE_LIMIT, TestConstants.DEFAULT_COUNTRY);
+        RTMovies openingMovies = moviesService.opening(TestConstants.PAGE_LIMIT, TestConstants.DEFAULT_COUNTRY);
         Assertions.assertThat(openingMovies.movies).isNotNull();
         Assertions.assertThat(openingMovies.movies.size()).isEqualTo(TestConstants.PAGE_LIMIT);
     }
