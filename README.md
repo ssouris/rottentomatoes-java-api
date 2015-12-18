@@ -1,5 +1,5 @@
 # rottentomatoes-java-api
-Java API for Rotten Tomatoes website
+Java API for Rotten Tomatoes website [![Build Status](https://travis-ci.org/ssouris/rottentomatoes-java-api.svg)](https://travis-ci.org/ssouris/rottentomatoes-java-api)
 
 ```java
 // Create an instance of the service you wish to use
