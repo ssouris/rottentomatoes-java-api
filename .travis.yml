@@ -1,5 +1,5 @@
 language: java
 jdk:
 - oraclejdk7
-install:
+script:
 - mvn clean package -DskipTests
